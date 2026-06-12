@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Akkadian Translator</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #1a1a2e;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      width: 100%;
+      background: #16213e;
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-bottom: 1px solid #0f3460;
+    }
+
+    header h1 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #e94560;
+      letter-spacing: 1px;
+    }
+
+    header span {
+      font-size: 0.85rem;
+      color: #888;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      padding: 40px 20px;
+      flex: 1;
+    }
+
+    .lang-bar {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .lang-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #e94560;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .translator {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .pane {
+      display: flex;
+      flex-direction: column;
+      background: #16213e;
+      border-radius: 12px;
+      border: 1px solid #0f3460;
+      overflow: hidden;
+    }
+
+    .pane-header {
+      padding: 12px 18px;
+      background: #0f3460;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #a0b4c8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 260px;
+      padding: 18px;
+      background: transparent;
+      border: none;
+      outline: none;
+      resize: vertical;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    textarea::placeholder {
+      color: #4a5568;
+    }
+
+    #output {
+      color: #7ec8e3;
+      cursor: default;
+    }
+
+    .pane-footer {
+      padding: 10px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #0f3460;
+      min-height: 46px;
+    }
+
+    #char-count {
+      font-size: 0.75rem;
+      color: #555;
+    }
+
+    .btn-translate {
+      background: #e94560;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 24px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-translate:hover { background: #c73652; }
+    .btn-translate:disabled { background: #555; cursor: not-allowed; }
+
+    #status {
+      font-size: 0.78rem;
+      color: #888;
+    }
+
+    .spinner {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border: 2px solid #555;
+      border-top-color: #e94560;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .examples {
+      margin-top: 28px;
+      padding: 20px;
+      background: #16213e;
+      border-radius: 12px;
+      border: 1px solid #0f3460;
+    }
+
+    .examples h3 {
+      font-size: 0.8rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .example-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip {
+      background: #0f3460;
+      border: 1px solid #1a4a7a;
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      color: #a0b4c8;
+    }
+
+    .chip:hover {
+      background: #1a4a7a;
+      color: #e0e0e0;
+    }
+
+    @media (max-width: 700px) {
+      .translator { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>𒀭 Akkadian Translator</h1>
+  <span>Akkadian (transliteration) → English</span>
+</header>
+
+<div class="container">
+  <div class="translator">
+    <div class="pane">
+      <div class="pane-header">Akkadian (transliteration)</div>
+      <textarea
+        id="input"
+        placeholder="Type Akkadian transliteration here...&#10;&#10;Example: šarrum ana ālim illik"
+        spellcheck="false"
+      ></textarea>
+      <div class="pane-footer">
+        <span id="char-count">0 characters</span>
+        <button class="btn-translate" id="btn" onclick="translate()">Translate</button>
+      </div>
+    </div>
+
+    <div class="pane">
+      <div class="pane-header">English</div>
+      <textarea id="output" readonly placeholder="Translation will appear here..."></textarea>
+      <div class="pane-footer">
+        <span id="status"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="examples">
+    <h3>Example phrases</h3>
+    <div class="example-chips">
+      <span class="chip" onclick="setExample(this)">šarrum ana ālim illik</span>
+      <span class="chip" onclick="setExample(this)">um-ma kà-ru-um kà-ni-ia-ma</span>
+      <span class="chip" onclick="setExample(this)">a-na da-nim ù en-líl</span>
+      <span class="chip" onclick="setExample(this)">qí-bi₄-ma</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  const input = document.getElementById('input');
+  const output = document.getElementById('output');
+  const status = document.getElementById('status');
+  const btn = document.getElementById('btn');
+  const charCount = document.getElementById('char-count');
+
+  let debounceTimer = null;
+
+  input.addEventListener('input', () => {
+    charCount.textContent = input.value.length + ' characters';
+
+    clearTimeout(debounceTimer);
+    if (input.value.trim().length > 3) {
+      debounceTimer = setTimeout(() => translate(), 800);
+    }
+  });
+
+  function setExample(el) {
+    input.value = el.textContent;
+    charCount.textContent = input.value.length + ' characters';
+    translate();
+  }
+
+  async function translate() {
+    const text = input.value.trim();
+    if (!text) return;
+
+    btn.disabled = true;
+    output.value = '';
+    status.innerHTML = '<span class="spinner"></span>Translating...';
+
+    try {
+      const response = await fetch('/translate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text }),
+      });
+
+      if (!response.ok) {
+        status.textContent = 'Error: ' + response.statusText;
+        btn.disabled = false;
+        return;
+      }
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = '';
+      let tokenCount = 0;
+      const startTime = Date.now();
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n');
+        buffer = lines.pop(); 
+
+        for (const line of lines) {
+          if (line.startsWith('data: ')) {
+            const data = line.slice(6);
+            if (data === '[DONE]') {
+              const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+              const tps = (tokenCount / elapsed).toFixed(1);
+              status.textContent = `Done · ${tokenCount} tokens · ${tps} tok/s`;
+              break;
+            }
+            try {
+              const parsed = JSON.parse(data);
+              if (parsed.token) {
+                output.value += parsed.token;
+                output.scrollTop = output.scrollHeight;
+                tokenCount++;
+              }
+            } catch {}
+          }
+        }
+      }
+
+    } catch (err) {
+      status.textContent = 'Connection error. Is the server running?';
+      console.error(err);
+    } finally {
+      btn.disabled = false;
+    }
+  }
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && e.ctrlKey) translate();
+  });
+</script>
+
+</body>
+</html>
