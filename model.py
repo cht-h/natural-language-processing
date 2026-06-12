@@ -52,7 +52,7 @@ def normalize_akkadian(text: str) -> str:
     #NFC normalization
     text = unicodedata.normalize("NFC", text)
 
-    # Strip lacunae and reconstruction markers
+    #strip lacunae and reconstruction markers
     text = re.sub(r"\[.*?\]", "", text)       # [damaged]
     text = re.sub(r"⸢.*?⸣", "", text)         # ⸢partial⸣
     text = re.sub(r"<.*?>", "", text)          # <supplied>
@@ -106,9 +106,8 @@ class AkkadianDataset(Dataset):
             padding=False,
         )
 
-        with self.tokenizer.as_target_tokenizer():
-            labels = self.tokenizer(
-                tgt,
+        labels = self.tokenizer(
+                text_target=tgt,
                 max_length=self.max_target_len,
                 truncation=True,
                 padding=False,
@@ -200,7 +199,7 @@ class My_Translator_Model:
             fp16=torch.cuda.is_available(),
             logging_dir="data/logs",
             logging_steps=50,
-            report_to="none",  #потом на "wandb" чтоб был трекинг
+            report_to="none",  #поменять на "wandb", чтоб был трекинг
             save_total_limit=2,
         )
 
@@ -333,6 +332,7 @@ class My_Translator_Model:
 
         logger.info(f"Evaluation results: {results}")
         return results
+
 
 #CLI
 if __name__ == "__main__":
