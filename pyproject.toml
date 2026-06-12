@@ -1,0 +1,16 @@
+[project]
+name = "akkadian-translator"
+version = "0.1.0"
+description = "Akkadian to English neural machine translator"
+authors = [
+    {name = "cht-h"}
+]
+readme = "README.md"
+requires-python = "^3.11"
+dependencies = [
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
