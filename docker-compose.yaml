@@ -1,0 +1,33 @@
+version: "3.9"
+
+services:
+  translator:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./model:/app/model
+      - ./data:/app/data
+    environment:
+      - WANDB_API_KEY=${WANDB_API_KEY}
+    profiles:
+      - cpu
+
+  translator-gpu:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./model:/app/model
+      - ./data:/app/data
+    environment:
+      - WANDB_API_KEY=${WANDB_API_KEY}
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    profiles:
+      - gpu
