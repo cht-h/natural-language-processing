@@ -147,6 +147,7 @@ class My_Translator_Model:
         Fine-tune ByT5 on Akkadian→English parallel corpus.
         Saves model to ./model/
         """
+        print("TRAIN STARTED", flush=True)
         logger.info(f"Starting training with dataset: {dataset_path}")
 
         #load data
