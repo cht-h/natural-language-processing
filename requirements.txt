@@ -1,0 +1,15 @@
+torch==2.6.0
+transformers==4.40.0
+accelerate==0.28.0
+datasets
+sacrebleu
+sentencepiece
+evaluate
+wandb
+fire
+pandas
+numpy
+fastapi
+uvicorn
+sse-starlette
+httpx
