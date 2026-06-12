@@ -1,4 +1,3 @@
-# Classic NLP, Machine Translation
 # Akkadian → English Neural Machine Translator
 
 **Автор:** Ангелина Черникова  
