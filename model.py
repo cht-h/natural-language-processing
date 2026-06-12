@@ -139,7 +139,7 @@ class My_Translator_Model:
         logger.info(f"Loading model from: {model_path}")
 
         self.tokenizer = AutoTokenizer.from_pretrained(model_path)
-        self.model = AutoModelForSeq2SeqLM.from_pretrained(model_path)
+        self.model = AutoModelForSeq2SeqLM.from_pretrained(model_path, weights_only=False)
         self.model.to(self.device)
         logger.info("Model loaded successfully")
 
