@@ -173,7 +173,7 @@ class My_Translator_Model:
 
         #load model
         logger.info(f"Loading base model: {self.MODEL_NAME}")
-        self.model = AutoModelForSeq2SeqLM.from_pretrained(self.MODEL_NAME)
+        self.model = AutoModelForSeq2SeqLM.from_pretrained(self.MODEL_NAME, weights_only=False)
 
         #data collator
         data_collator = DataCollatorForSeq2Seq(
