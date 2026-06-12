@@ -160,7 +160,7 @@ class My_Translator_Model:
             fp16=torch.cuda.is_available(),
             logging_dir="data/logs",
             logging_steps=50,
-            report_to="none",
+            report_to="wandb",
             save_total_limit=2,
         )
 
