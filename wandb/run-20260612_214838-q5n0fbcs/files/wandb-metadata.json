@@ -1,0 +1,44 @@
+{
+  "os": "Windows-10-10.0.26200-SP0",
+  "python": "CPython 3.11.9",
+  "startedAt": "2026-06-12T14:48:38.192939Z",
+  "args": [
+    "train",
+    "--dataset_path=data/raw/train.csv"
+  ],
+  "program": "C:\\Users\\chern\\OneDrive\\Desktop\\ml3\\model.py",
+  "codePath": "model.py",
+  "codePathLocal": "model.py",
+  "git": {
+    "remote": "https://github.com/cht-h/natural-language-processing.git",
+    "commit": "38e29792ff847ab5f1e59d19f97abf49374ff775"
+  },
+  "email": "ansenka888@gmail.com",
+  "root": "C:\\Users\\chern\\OneDrive\\Desktop\\ml3",
+  "host": "karma",
+  "executable": "C:\\Users\\chern\\AppData\\Local\\pypoetry\\Cache\\virtualenvs\\akkadian-translator-dA7F8k0J-py3.11\\Scripts\\python.exe",
+  "cpu_count": 20,
+  "cpu_count_logical": 28,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "998200307712",
+      "used": "669260468224"
+    }
+  },
+  "memory": {
+    "total": "16869457920"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "memoryTotal": "8585740288",
+      "cudaCores": 3072,
+      "architecture": "Ada",
+      "uuid": "GPU-77e08725-5647-4bdf-fcab-505313dc57a7"
+    }
+  ],
+  "cudaVersion": "12.7",
+  "writerId": "fqy8r7q06c0wfnxaz5j7f8dcfukxt389"
+}

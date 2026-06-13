@@ -1,0 +1,43 @@
+  0%|                                                                                                                                    | 0/660 [00:00<?, ?it/s]C:\Users\chern\AppData\Local\pypoetry\Cache\virtualenvs\akkadian-translator-dA7F8k0J-py3.11\Lib\site-packages\torch\utils\data\dataloader.py:752: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  super().__init__(loader)
+C:\Users\chern\AppData\Local\pypoetry\Cache\virtualenvs\akkadian-translator-dA7F8k0J-py3.11\Lib\site-packages\torch\_dynamo\eval_frame.py:1298: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. Starting in PyTorch 2.9, calling checkpoint without use_reentrant will raise an exception. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+ 20%|███████████████████████▌                                                                                              | 132/660 [1:27:09<6:54:36, 47.11s/it]C:\Users\chern\AppData\Local\pypoetry\Cache\virtualenvs\akkadian-translator-dA7F8k0J-py3.11\Lib\site-packages\torch\utils\data\dataloader.py:752: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+{'loss': 3.127, 'grad_norm': 8.28444766998291, 'learning_rate': 0.00025, 'epoch': 0.38}
+{'loss': 1.3276, 'grad_norm': 3.763915777206421, 'learning_rate': 0.0005, 'epoch': 0.75}
+  super().__init__(loader)                                                                                                                                       
+{'eval_loss': 0.8638683557510376, 'eval_runtime': 432.9886, 'eval_samples_per_second': 1.155, 'eval_steps_per_second': 0.577, 'epoch': 0.99}
+C:\Users\chern\AppData\Local\pypoetry\Cache\virtualenvs\akkadian-translator-dA7F8k0J-py3.11\Lib\site-packages\torch\_dynamo\eval_frame.py:1298: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. Starting in PyTorch 2.9, calling checkpoint without use_reentrant will raise an exception. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+ 40%|███████████████████████████████████████████████▍                                                                      | 265/660 [3:10:15<4:04:08, 37.08s/it]C:\Users\chern\AppData\Local\pypoetry\Cache\virtualenvs\akkadian-translator-dA7F8k0J-py3.11\Lib\site-packages\torch\utils\data\dataloader.py:752: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+{'loss': 1.0513, 'grad_norm': 1.6480131149291992, 'learning_rate': 0.0004553571428571429, 'epoch': 1.13}
+{'loss': 0.9101, 'grad_norm': 0.678115725517273, 'learning_rate': 0.0004107142857142857, 'epoch': 1.51}
+{'loss': 0.8492, 'grad_norm': 0.8470628261566162, 'learning_rate': 0.00036607142857142855, 'epoch': 1.88}
+  super().__init__(loader)                                                                                                                                       
+{'eval_loss': 0.6699498891830444, 'eval_runtime': 257.4749, 'eval_samples_per_second': 1.942, 'eval_steps_per_second': 0.971, 'epoch': 2.0}
+C:\Users\chern\AppData\Local\pypoetry\Cache\virtualenvs\akkadian-translator-dA7F8k0J-py3.11\Lib\site-packages\torch\_dynamo\eval_frame.py:1298: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. Starting in PyTorch 2.9, calling checkpoint without use_reentrant will raise an exception. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+ 60%|███████████████████████████████████████████████████████████████████████▏                                              | 398/660 [4:25:36<2:14:58, 30.91s/it]C:\Users\chern\AppData\Local\pypoetry\Cache\virtualenvs\akkadian-translator-dA7F8k0J-py3.11\Lib\site-packages\torch\utils\data\dataloader.py:752: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+{'loss': 0.7588, 'grad_norm': 0.5991087555885315, 'learning_rate': 0.00032142857142857147, 'epoch': 2.26}
+{'loss': 0.7136, 'grad_norm': 0.7891168594360352, 'learning_rate': 0.00027678571428571433, 'epoch': 2.64}
+  super().__init__(loader)                                                                                                                                       
+{'eval_loss': 0.6096824407577515, 'eval_runtime': 242.5694, 'eval_samples_per_second': 2.061, 'eval_steps_per_second': 1.031, 'epoch': 3.0}
+C:\Users\chern\AppData\Local\pypoetry\Cache\virtualenvs\akkadian-translator-dA7F8k0J-py3.11\Lib\site-packages\torch\_dynamo\eval_frame.py:1298: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. Starting in PyTorch 2.9, calling checkpoint without use_reentrant will raise an exception. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+ 80%|██████████████████████████████████████████████████████████████████████████████████████████████▉                       | 531/660 [5:40:02<1:01:24, 28.56s/it]C:\Users\chern\AppData\Local\pypoetry\Cache\virtualenvs\akkadian-translator-dA7F8k0J-py3.11\Lib\site-packages\torch\utils\data\dataloader.py:752: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+{'loss': 0.6879, 'grad_norm': 0.6686409115791321, 'learning_rate': 0.00023214285714285717, 'epoch': 3.01}
+{'loss': 0.644, 'grad_norm': 0.4913385808467865, 'learning_rate': 0.0001875, 'epoch': 3.39}
+{'loss': 0.6182, 'grad_norm': 0.642381489276886, 'learning_rate': 0.00014285714285714284, 'epoch': 3.77}
+  super().__init__(loader)                                                                                                                                       
+{'eval_loss': 0.5784947276115417, 'eval_runtime': 262.5826, 'eval_samples_per_second': 1.904, 'eval_steps_per_second': 0.952, 'epoch': 4.0}
+C:\Users\chern\AppData\Local\pypoetry\Cache\virtualenvs\akkadian-translator-dA7F8k0J-py3.11\Lib\site-packages\torch\_dynamo\eval_frame.py:1298: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. Starting in PyTorch 2.9, calling checkpoint without use_reentrant will raise an exception. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 660/660 [6:53:14<00:00, 28.72s/it]There were missing keys in the checkpoint model loaded: ['encoder.embed_tokens.weight', 'decoder.embed_tokens.weight'].
+{'loss': 0.6066, 'grad_norm': 0.5948486924171448, 'learning_rate': 9.821428571428572e-05, 'epoch': 4.14}
+{'loss': 0.6024, 'grad_norm': 0.6205970644950867, 'learning_rate': 5.357142857142857e-05, 'epoch': 4.52}
+{'loss': 0.5855, 'grad_norm': 0.530770480632782, 'learning_rate': 8.928571428571428e-06, 'epoch': 4.9}
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 660/660 [6:53:17<00:00, 37.57s/it]
+{'eval_loss': 0.574974775314331, 'eval_runtime': 258.6332, 'eval_samples_per_second': 1.933, 'eval_steps_per_second': 0.967, 'epoch': 4.97}
+{'train_runtime': 24807.7111, 'train_samples_per_second': 0.214, 'train_steps_per_second': 0.027, 'train_loss': 0.9542247945612127, 'epoch': 4.97}
+2026-06-13 04:54:46,235 [INFO] Model saved to model

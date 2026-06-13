@@ -110,9 +110,7 @@ class My_Translator_Model:
         model_path = str(self.MODEL_DIR) if self.MODEL_DIR.exists() else self.MODEL_NAME
         logger.info(f"Loading model from: {model_path}")
         self.tokenizer = AutoTokenizer.from_pretrained(model_path)
-        self.model = AutoModelForSeq2SeqLM.from_pretrained(
-            model_path, weights_only=False
-        )
+        self.model = AutoModelForSeq2SeqLM.from_pretrained(model_path)
         self.model.to(self.device)
         logger.info("Model loaded successfully")
 
@@ -133,9 +131,7 @@ class My_Translator_Model:
         train_dataset = AkkadianDataset(train_df, self.tokenizer)
         dev_dataset = AkkadianDataset(dev_df, self.tokenizer)
 
-        self.model = AutoModelForSeq2SeqLM.from_pretrained(
-            self.MODEL_NAME, weights_only=False
-        )
+        self.model = AutoModelForSeq2SeqLM.from_pretrained(self.MODEL_NAME)
 
         data_collator = DataCollatorForSeq2Seq(
             tokenizer=self.tokenizer,
@@ -146,22 +142,25 @@ class My_Translator_Model:
         training_args = Seq2SeqTrainingArguments(
             output_dir=str(self.MODEL_DIR),
             num_train_epochs=5,
-            per_device_train_batch_size=8,
-            per_device_eval_batch_size=8,
-            warmup_steps=200,
+            per_device_train_batch_size=2,
+            per_device_eval_batch_size=2,
+            warmup_steps=100,
             weight_decay=0.01,
             learning_rate=5e-4,
-            eval_strategy="epoch",
+            evaluation_strategy="epoch",
             save_strategy="epoch",
             load_best_model_at_end=True,
             metric_for_best_model="eval_loss",
             predict_with_generate=True,
-            generation_max_length=256,
-            fp16=torch.cuda.is_available(),
+            generation_max_length=128,
+            fp16=False,
             logging_dir="data/logs",
             logging_steps=50,
             report_to="wandb",
             save_total_limit=2,
+            gradient_accumulation_steps=4,
+            gradient_checkpointing=True,
+            max_grad_norm=1.0,
         )
 
         trainer = Seq2SeqTrainer(
@@ -208,11 +207,13 @@ class My_Translator_Model:
         logger.info(f"Translation: {translation[:80]}")
 
         if stream:
-            for word in translation.split():
-                yield word + " "
+            def _stream():
+                for word in translation.split():
+                    yield word + " "
+            return _stream()
         else:
             return translation
-
+        
     def predict_file(self, dataset_path: str) -> None:
         """Translate all rows, save to ./data/results.csv"""
         self._load_model()
@@ -245,6 +246,9 @@ class My_Translator_Model:
 
         for i, row in df.iterrows():
             pred = self.predict(row["transliteration"], stream=False)
+            pred = self.predict(str(row["transliteration"]), stream=False)
+            if not isinstance(pred, str):
+                pred = "".join(pred)
             predictions.append(pred)
             references.append(row["translation"])
             if (i + 1) % 20 == 0:

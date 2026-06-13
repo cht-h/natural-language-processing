@@ -1,6 +1,6 @@
 # Akkadian → English Neural Machine Translator
 
-**Автор:** Ангелина Черникова  
+**Автор:** Ангелина Черникова и Агафонов Руслан
 **Группа:** 972401
 
 ## Описание
@@ -17,10 +17,10 @@
 
 | Technique | chrF++ on dev | Notes |
 |-----------|--------------|-------|
-| Baseline (greedy, no norm) | TBD | ByT5-small, 5 epochs |
-| + Orthography normalization | TBD | Лакуны, подстрочные цифры |
-| + Beam search (beam=4) | TBD | length_penalty=1.0 |
-| + Ensemble (2 checkpoints) | TBD | seed 42 + seed 123 |
+| Baseline (greedy, no norm) | 14.77 | ByT5-small, 5 epochs, 100 dev samples |
+| + Orthography normalization | TBD | |
+| + Beam search (beam=4) | 14.77 | beam=4 использован в baseline |
+| + Ensemble (2 checkpoints) | TBD | |
 
 ## Датасеты
 
@@ -73,13 +73,11 @@ open http://localhost:8000
 
 ## Метрики
 
-| Метрика | Dev | 
-|---------|-----|
-| BLEU | TBD |
-| chrF++ | TBD |
-| COMET | TBD |
-| TTFT (медиана) | TBD |
-| Tokens/sec | TBD |
+| Метрика | Dev (100 samples) |
+|---------|-------------------|
+| BLEU | 1.18 |
+| chrF++ | 14.77 |
+| COMET | N/A |
 
 ## Ресурсы
 
