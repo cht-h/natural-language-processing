@@ -46,20 +46,6 @@
       flex: 1;
     }
 
-    .lang-bar {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
-    }
-
-    .lang-label {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #e94560;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
     .translator {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -99,9 +85,7 @@
       font-family: 'Segoe UI', sans-serif;
     }
 
-    textarea::placeholder {
-      color: #4a5568;
-    }
+    textarea::placeholder { color: #4a5568; }
 
     #output {
       color: #7ec8e3;
@@ -117,10 +101,7 @@
       min-height: 46px;
     }
 
-    #char-count {
-      font-size: 0.75rem;
-      color: #555;
-    }
+    #char-count { font-size: 0.75rem; color: #555; }
 
     .btn-translate {
       background: #e94560;
@@ -137,10 +118,7 @@
     .btn-translate:hover { background: #c73652; }
     .btn-translate:disabled { background: #555; cursor: not-allowed; }
 
-    #status {
-      font-size: 0.78rem;
-      color: #888;
-    }
+    #status { font-size: 0.78rem; color: #888; }
 
     .spinner {
       display: inline-block;
@@ -172,11 +150,7 @@
       margin-bottom: 12px;
     }
 
-    .example-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+    .example-chips { display: flex; flex-wrap: wrap; gap: 10px; }
 
     .chip {
       background: #0f3460;
@@ -189,10 +163,7 @@
       color: #a0b4c8;
     }
 
-    .chip:hover {
-      background: #1a4a7a;
-      color: #e0e0e0;
-    }
+    .chip:hover { background: #1a4a7a; color: #e0e0e0; }
 
     @media (max-width: 700px) {
       .translator { grid-template-columns: 1fr; }
@@ -252,7 +223,6 @@
 
   input.addEventListener('input', () => {
     charCount.textContent = input.value.length + ' characters';
-
     clearTimeout(debounceTimer);
     if (input.value.trim().length > 3) {
       debounceTimer = setTimeout(() => translate(), 800);
@@ -291,6 +261,7 @@
       let buffer = '';
       let tokenCount = 0;
       const startTime = Date.now();
+      let done_flag = false;
 
       while (true) {
         const { done, value } = await reader.read();
@@ -298,20 +269,24 @@
 
         buffer += decoder.decode(value, { stream: true });
         const lines = buffer.split('\n');
-        buffer = lines.pop(); 
+        buffer = lines.pop();
 
         for (const line of lines) {
           if (line.startsWith('data: ')) {
-            const data = line.slice(6);
+            const data = line.slice(6).trim();
+
             if (data === '[DONE]') {
+              done_flag = true;
               const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
-              const tps = (tokenCount / elapsed).toFixed(1);
+              const tps = elapsed > 0 ? (tokenCount / elapsed).toFixed(1) : '0';
               status.textContent = `Done · ${tokenCount} tokens · ${tps} tok/s`;
+              btn.disabled = false;
               break;
             }
+
             try {
               const parsed = JSON.parse(data);
-              if (parsed.token) {
+              if (parsed.token !== undefined) {
                 output.value += parsed.token;
                 output.scrollTop = output.scrollHeight;
                 tokenCount++;
@@ -319,6 +294,8 @@
             } catch {}
           }
         }
+
+        if (done_flag) break;
       }
 
     } catch (err) {
@@ -326,6 +303,9 @@
       console.error(err);
     } finally {
       btn.disabled = false;
+      if (!status.textContent.startsWith('Done')) {
+        status.textContent = '';
+      }
     }
   }
 

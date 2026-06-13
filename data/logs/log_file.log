@@ -2587,3 +2587,69 @@
 2026-06-13 23:47:50,258 [INFO] Translation: Thus Kuwatti, say to Ennam-Aššur: 21 talents 40 minas of good copper, 1 guaranto
 2026-06-13 23:47:50,259 [INFO] Translating: a-na 4 gú an.na a-wi-it e-lá-ma 4 ma-na 15 gín.ta da-tum 17 ma-na an.na ik-šu-sú
 2026-06-13 23:47:56,154 [INFO] Translation: Say to 4 talents of tin that Elamma owes 40 minas 15 shekels for silver, 17 mont
+2026-06-13 23:51:13,423 [INFO] Using device: cpu
+2026-06-13 23:51:13,459 [INFO] Using device: cpu
+2026-06-13 23:51:13,487 [INFO] Loading translation model...
+2026-06-13 23:51:13,487 [INFO] Loading model from: model
+2026-06-13 23:51:13,918 [INFO] Model loaded successfully
+2026-06-13 23:51:13,919 [INFO] Model ready.
+2026-06-13 23:52:13,653 [INFO] Translate request: šarrum ana ālim illik
+2026-06-13 23:52:13,655 [INFO] Translating: šarrum ana ālim illik
+2026-06-13 23:52:15,033 [INFO] Translation: From the week of Illil.
+2026-06-13 23:55:11,150 [INFO] Using device: cpu
+2026-06-13 23:55:11,280 [INFO] Using device: cpu
+2026-06-13 23:55:11,336 [INFO] Loading translation model...
+2026-06-13 23:55:11,336 [INFO] Loading model from: model
+2026-06-13 23:55:11,921 [INFO] Model loaded successfully
+2026-06-13 23:55:11,921 [INFO] Model ready.
+2026-06-13 23:55:23,804 [INFO] Translate request: šarrum ana ālim illik
+2026-06-13 23:55:23,807 [INFO] Translating: šarrum ana ālim illik
+2026-06-13 23:55:25,489 [INFO] Translation: From the week of Illil.
+2026-06-13 23:56:09,573 [INFO] Using device: cpu
+2026-06-13 23:56:09,589 [INFO] Using device: cpu
+2026-06-13 23:56:09,606 [INFO] Loading translation model...
+2026-06-13 23:56:09,606 [INFO] Loading model from: model
+2026-06-13 23:56:10,040 [INFO] Model loaded successfully
+2026-06-13 23:56:10,040 [INFO] Model ready.
+2026-06-13 23:56:16,701 [INFO] Translate request: um-ma kà-ru-um kà-ni-ia-ma
+2026-06-13 23:56:16,704 [INFO] Translating: um-ma kà-ru-um kà-ni-ia-ma
+2026-06-13 23:56:21,046 [INFO] Translation: Thus Kanesh, say to your father's customers: <gap> shekels of silver.
+2026-06-13 23:56:29,897 [INFO] Translate request: qí-bi₄-ma
+2026-06-13 23:56:29,899 [INFO] Translating: qí-bi₄-ma
+2026-06-13 23:56:30,818 [INFO] Translation: <gap> minas of silver.
+2026-06-13 23:56:34,331 [INFO] Translate request: šarrum ana ālim illik
+2026-06-13 23:56:34,333 [INFO] Translating: šarrum ana ālim illik
+2026-06-13 23:56:35,255 [INFO] Translation: From the week of Illil.
+2026-06-13 23:56:35,707 [INFO] Translate request: um-ma kà-ru-um kà-ni-ia-ma
+2026-06-13 23:56:35,709 [INFO] Translating: um-ma kà-ru-um kà-ni-ia-ma
+2026-06-13 23:56:39,069 [INFO] Translation: Thus Kanesh, say to your father's customers: <gap> shekels of silver.
+2026-06-14 00:02:33,935 [INFO] Using device: cpu
+2026-06-14 00:02:34,026 [INFO] Using device: cpu
+2026-06-14 00:02:34,091 [INFO] Loading translation model...
+2026-06-14 00:02:34,092 [INFO] Loading model from: model
+2026-06-14 00:02:34,666 [INFO] Model loaded successfully
+2026-06-14 00:02:34,666 [INFO] Model ready.
+2026-06-14 00:02:38,673 [INFO] Translate request: šarrum ana ālim illik
+2026-06-14 00:02:38,676 [INFO] Translating: šarrum ana ālim illik
+2026-06-14 00:02:40,304 [INFO] Translation: From the week of Illil.
+2026-06-14 00:03:23,599 [INFO] Using device: cpu
+2026-06-14 00:03:23,679 [INFO] Using device: cpu
+2026-06-14 00:03:23,782 [INFO] Loading translation model...
+2026-06-14 00:03:23,782 [INFO] Loading model from: model
+2026-06-14 00:03:24,399 [INFO] Model loaded successfully
+2026-06-14 00:03:24,399 [INFO] Model ready.
+2026-06-14 00:03:29,220 [INFO] Translate request: a-na da-nim ù en-líl
+2026-06-14 00:03:29,223 [INFO] Translating: a-na da-nim ù en-líl
+2026-06-14 00:03:30,983 [INFO] Translation: To Danum and Enlil.
+2026-06-14 00:03:33,200 [INFO] Translate request: qí-bi₄-ma
+2026-06-14 00:03:33,202 [INFO] Translating: qí-bi₄-ma
+2026-06-14 00:03:34,258 [INFO] Translation: <gap> minas of silver.
+2026-06-14 00:03:43,322 [INFO] Translate request: qí-bi₄-ma
+2026-06-14 00:03:43,324 [INFO] Translating: qí-bi₄-ma
+2026-06-14 00:03:44,243 [INFO] Translation: <gap> minas of silver.
+2026-06-14 00:03:53,819 [INFO] Translate request: um-ma kà-ru-um kà-ni-ia-ma
+2026-06-14 00:03:53,821 [INFO] Translating: um-ma kà-ru-um kà-ni-ia-ma
+2026-06-14 00:03:57,317 [INFO] Translation: Thus Kanesh, say to your father's customers: <gap> shekels of silver.
+2026-06-14 00:04:00,055 [INFO] Translate request: um-ma kà-ru-um kà-ni-ia-ma аравряра
+2026-06-14 00:04:00,058 [INFO] Translating: um-ma kà-ru-um kà-ni-ia-ma аравряра
+2026-06-14 00:04:03,265 [INFO] Translation: Thus Kanesh, say to the merchant: As for your testimony <gap>

@@ -80,7 +80,7 @@ async def translate(request: TranslateRequest):
             tokens = await loop.run_in_executor(None, run_translation)
 
             for token in tokens:
-                yield {"data": f'{{"token": "{token.strip()}"}}'}
+                yield {"data": f'{{"token": "{token}"}}'}
                 await asyncio.sleep(0.03)  #small delay for visible streaming effect
 
             yield {"data": "[DONE]"}
