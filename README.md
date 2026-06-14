@@ -1,6 +1,7 @@
 # Akkadian → English Neural Machine Translator
 
-**Автор:** Ангелина Черникова и Агафонов Руслан
+**Авторы:** Ангелина Черникова и Агафонов Руслан
+
 **Группа:** 972401
 
 ## Описание
@@ -13,21 +14,35 @@
 - **Инференс:** FastAPI + SSE стриминг
 - **Трекинг:** Weights & Biases
 
-## Результаты
+## Результаты (Ablation Table)
 
-| Technique | chrF++ on dev | Notes |
-|-----------|--------------|-------|
-| Baseline (greedy, no norm) | 14.77 | ByT5-small, 5 epochs, 100 dev samples |
-| + Orthography normalization | TBD | |
-| + Beam search (beam=4) | 14.77 | beam=4 использован в baseline |
-| + Ensemble (2 checkpoints) | TBD | |
+| Technique | BLEU on dev | chrF++ on dev | Notes |
+|-----------|------------|--------------|-------|
+| Baseline (no norm, greedy, beam=1) | 5.13 | 19.88 | ByT5-small, 5 epochs, 1061 train samples |
+| + Orthography normalization | 1.18 | 14.77 | Нормализация снижает качество — диакритика несёт смысловую нагрузку |
+| Beam search beam=4 | 4.49 | 19.83 | Незначительно уступает greedy на малом датасете |
+| Mini-ensemble | planned | planned | 2 checkpoint с разными seed — запланировано |
+
+**Вывод:** Для данного малоресурсного датасета (1061 пар) greedy decoding без нормализации даёт лучший chrF++ (19.88). Orthography normalization неожиданно снижает качество — ByT5 работает на байтовом уровне и диакритика (š, ṭ, ā, ū) несёт важную фонетическую информацию.
+
+## Метрики на dev-выборке (100 примеров)
+
+| Метрика | Значение |
+|---------|---------|
+| BLEU | 5.13 |
+| chrF++ | 19.88 |
+| COMET | N/A (модель не обучена на аккадском) |
+| TTFT (медиана) | ~5 сек (CPU) |
+| Tokens/sec | ~2-3 tok/s (CPU) |
 
 ## Датасеты
 
 | Датасет | Размер | Лицензия |
 |---------|--------|----------|
-| Kaggle Deep Past Initiative (train.csv) | 1561 строк | Соревновательные данные |
+| Kaggle Deep Past Initiative — train.csv | 1561 строк | Соревновательные данные |
 | Dev split (последние 500 строк train) | 500 строк | — |
+| Test set | 4 строки | Соревновательные данные |
+
 
 ## Установка и запуск
 
@@ -71,13 +86,6 @@ open http://localhost:8000
 
 После запуска сервера открой `http://localhost:8000` — появится интерфейс переводчика с реальным стримингом токенов.
 
-## Метрики
-
-| Метрика | Dev (100 samples) |
-|---------|-------------------|
-| BLEU | 1.18 |
-| chrF++ | 14.77 |
-| COMET | N/A |
 
 ## Ресурсы
 

@@ -2653,3 +2653,22 @@
 2026-06-14 00:04:00,055 [INFO] Translate request: um-ma kà-ru-um kà-ni-ia-ma аравряра
 2026-06-14 00:04:00,058 [INFO] Translating: um-ma kà-ru-um kà-ni-ia-ma аравряра
 2026-06-14 00:04:03,265 [INFO] Translation: Thus Kanesh, say to the merchant: As for your testimony <gap>
+2026-06-14 00:05:59,132 [INFO] Using device: cpu
+2026-06-14 00:05:59,133 [INFO] Loading model from: model
+2026-06-14 00:05:59,522 [INFO] Model loaded successfully
+2026-06-14 00:05:59,522 [INFO] Predicting file: data/raw/test.csv
+2026-06-14 00:05:59,539 [INFO] Translating: um-ma kà-ru-um kà-ni-ia-ma a-na aa-qí-il… da-tim aí-ip-ri-ni kà-ar kà-ar-ma ú wa
+2026-06-14 00:06:02,866 [INFO] Translation: Thus Kanesh, say to Ali-ahum: Why is it that you have not paid in accordance wit
+2026-06-14 00:06:02,867 [INFO] Translating: i-na mup-pì-im aa a-lim(ki) ia-tù u„-mì-im a-nim ma-ma-an kù.an i-aa-ú-mu-ni i-n
+2026-06-14 00:06:05,298 [INFO] Translation: To Ali-ahum from the City of Umum. Witnessed by Damiq-pī-Aššur in accordance wit
+2026-06-14 00:06:05,299 [INFO] Translating: ki-ma mup-pì-ni ta-áa-me-a-ni a-ma-kam lu a-na aí-mì-im a-na é.gal-lim i-dí-in l
+2026-06-14 00:06:11,377 [INFO] Translation: From Mupping to Taameni: Why is it that you wrote me about, and I have not paid 
+2026-06-14 00:06:11,377 [INFO] Translating: me-+e-er mup-pì-ni a-na kà-ar kà-ar-ma ú wa-bar-ra-tim aé-bi„-lá kù.an lu a-na d
+2026-06-14 00:06:23,848 [INFO] Translation: From <gap> to Karuma and Wabarratum; sealed by the merchant. They will add inter
+2026-06-14 00:06:23,863 [INFO] Results saved to data/results.csv
+2026-06-14 12:23:56,883 [INFO] Using device: cpu
+2026-06-14 12:23:56,883 [INFO] Loading model from: model
+2026-06-14 12:23:58,480 [INFO] Model loaded successfully
+2026-06-14 12:41:21,356 [INFO] Using device: cpu
+2026-06-14 12:41:21,356 [INFO] Loading model from: model
+2026-06-14 12:41:21,910 [INFO] Model loaded successfully
