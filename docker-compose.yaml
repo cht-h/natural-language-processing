@@ -9,9 +9,7 @@ services:
       - ./model:/app/model
       - ./data:/app/data
     environment:
-      - WANDB_API_KEY=${WANDB_API_KEY}
-    profiles:
-      - cpu
+      - WANDB_API_KEY=${WANDB_API_KEY:-}
 
   translator-gpu:
     build: .

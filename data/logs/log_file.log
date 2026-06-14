@@ -2682,3 +2682,62 @@
 2026-06-14 17:39:59,043 [INFO] Using device: cpu
 2026-06-14 17:39:59,074 [INFO] Loading translation model...
 2026-06-14 17:39:59,075 [INFO] Loading model from: model
+2026-06-14 17:40:00,867 [INFO] Model loaded successfully
+2026-06-14 17:40:00,867 [INFO] Model ready.
+2026-06-14 17:40:29,529 [INFO] Translate request: a-na ša-lim-a-šùr qí-bi-ma
+2026-06-14 17:40:29,558 [INFO] Translating: a-na ša-lim-a-šùr qí-bi-ma
+2026-06-14 17:40:31,340 [INFO] Translation: To Šalim-Aššur from the City.
+2026-06-14 17:40:33,372 [INFO] Translate request: a-na ša-lim-a-šùr qí-bi-ma
+2026-06-14 17:40:33,373 [INFO] Translating: a-na ša-lim-a-šùr qí-bi-ma
+2026-06-14 17:40:34,440 [INFO] Translation: To Šalim-Aššur from the City.
+2026-06-14 17:40:36,460 [INFO] Translate request: a-na ša-lim-a-šùr qí-bi-ma
+2026-06-14 17:40:36,466 [INFO] Translating: a-na ša-lim-a-šùr qí-bi-ma
+2026-06-14 17:40:37,482 [INFO] Translation: To Šalim-Aššur from the City.
+2026-06-14 17:40:39,522 [INFO] Translate request: a-na ša-lim-a-šùr qí-bi-ma
+2026-06-14 17:40:39,527 [INFO] Translating: a-na ša-lim-a-šùr qí-bi-ma
+2026-06-14 17:40:40,596 [INFO] Translation: To Šalim-Aššur from the City.
+2026-06-14 17:40:42,646 [INFO] Translate request: a-na ša-lim-a-šùr qí-bi-ma
+2026-06-14 17:40:42,650 [INFO] Translating: a-na ša-lim-a-šùr qí-bi-ma
+2026-06-14 17:40:43,699 [INFO] Translation: To Šalim-Aššur from the City.
+2026-06-14 17:44:25,172 [INFO] Translate request: šarrum ana ālim illik
+2026-06-14 17:44:25,174 [INFO] Translating: šarrum ana ālim illik
+2026-06-14 17:44:26,934 [INFO] Translation: From the week of Illil.
+2026-06-14 17:44:30,606 [INFO] Translate request: a-na da-nim ù en-líl
+2026-06-14 17:44:30,609 [INFO] Translating: a-na da-nim ù en-líl
+2026-06-14 17:44:32,332 [INFO] Translation: To Danum and Enlil.
+2026-06-14 17:44:37,364 [INFO] Translate request: šarrum ana ālim illik
+2026-06-14 17:44:37,376 [INFO] Translating: šarrum ana ālim illik
+2026-06-14 17:44:39,105 [INFO] Translation: From the week of Illil.
+2026-06-14 17:45:41,722 [INFO] Translate request: šarrum ana ā
+2026-06-14 17:45:41,734 [INFO] Translating: šarrum ana ā
+2026-06-14 17:45:43,357 [INFO] Translation: Sealed by <gap>
+2026-06-14 17:45:51,749 [INFO] Translate request: šarrum ana ālim illik
+2026-06-14 17:45:51,752 [INFO] Translating: šarrum ana ālim illik
+2026-06-14 17:45:57,205 [INFO] Translation: From the week of Illil.
+2026-06-14 17:46:35,584 [INFO] Translate request: šarrum ana āl
+2026-06-14 17:46:35,588 [INFO] Translating: šarrum ana āl
+2026-06-14 17:46:36,274 [INFO] Translation: Sealed by the City <gap>
+2026-06-14 17:46:46,330 [INFO] Translate request: šarrum ana ālim illik
+2026-06-14 17:46:46,334 [INFO] Translating: šarrum ana ālim illik
+2026-06-14 17:46:47,032 [INFO] Translation: From the week of Illil.
+2026-06-14 17:49:26,248 [INFO] Translate request: šarrum ana āl
+2026-06-14 17:49:26,253 [INFO] Translating: šarrum ana āl
+2026-06-14 17:49:27,240 [INFO] Translation: Sealed by the City <gap>
+2026-06-14 17:49:50,353 [INFO] Translate request: šarrum ana āl
+2026-06-14 17:49:50,354 [INFO] Translating: šarrum ana āl
+2026-06-14 17:49:51,111 [INFO] Translation: Sealed by the City <gap>
+2026-06-14 17:49:53,717 [INFO] Translate request: šarrum ana ālim allik
+2026-06-14 17:49:53,720 [INFO] Translating: šarrum ana ālim allik
+2026-06-14 17:49:54,490 [INFO] Translation: From the City to <gap>
+2026-06-14 17:50:01,367 [INFO] Translate request: šarrum ana ālim illik
+2026-06-14 17:50:01,369 [INFO] Translating: šarrum ana ālim illik
+2026-06-14 17:50:02,138 [INFO] Translation: From the week of Illil.
+2026-06-14 17:50:05,399 [INFO] Translate request: šarrum ana ā
+2026-06-14 17:50:05,405 [INFO] Translating: šarrum ana ā
+2026-06-14 17:50:06,140 [INFO] Translation: Sealed by <gap>
+2026-06-14 17:50:07,118 [INFO] Translate request: šarrum ana ā
+2026-06-14 17:50:07,122 [INFO] Translating: šarrum ana ā
+2026-06-14 17:50:07,874 [INFO] Translation: Sealed by <gap>
+2026-06-14 17:50:10,384 [INFO] Translate request: šarrum ana ālim illik
+2026-06-14 17:50:10,387 [INFO] Translating: šarrum ana ālim illik
+2026-06-14 17:50:11,131 [INFO] Translation: From the week of Illil.
