@@ -2678,3 +2678,7 @@
 2026-06-14 13:02:28,217 [INFO] Loading model from: model
 2026-06-14 13:02:29,343 [INFO] Model loaded successfully
 2026-06-14 13:02:29,344 [INFO] Model ready.
+2026-06-14 17:39:59,006 [INFO] Using device: cpu
+2026-06-14 17:39:59,043 [INFO] Using device: cpu
+2026-06-14 17:39:59,074 [INFO] Loading translation model...
+2026-06-14 17:39:59,075 [INFO] Loading model from: model
